@@ -1,0 +1,35 @@
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    /* Full height of the viewport */
+}
+
+.sidebar {
+    flex: 0 0 250px;
+    /* Fixed width for the sidebar */
+    background-color: #f8f9fa;
+    height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    /* Allows scrolling if content overflows */
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.content-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.content-sections>* {
+    flex: 1;
+    min-width: 250px;
+    /* Adjust based on your design needs */
+}

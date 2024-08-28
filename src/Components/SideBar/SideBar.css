@@ -1,0 +1,22 @@
+.sidebar {
+    background-color: #f8f9fa;
+    height: 100vh;
+    padding-top: 20px;
+}
+
+.sidebar .nav-link {
+    color: #333;
+    padding: 10px 15px;
+}
+
+.sidebar .nav-link.active {
+    font-weight: bold;
+    color: #71cd14;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #e9ecef;
+}
+#btn ul li a{
+    text-decoration: none;
+}
