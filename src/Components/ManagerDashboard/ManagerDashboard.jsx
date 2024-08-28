@@ -9,7 +9,7 @@ const ManagerDashboard = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/users/users');
+                const response = await axios.get('https://backend-rvaz.onrender.com/users/users');
                 setCustomers(response.data.info);
             } catch (error) {
                 console.error('Error fetching users:', error);

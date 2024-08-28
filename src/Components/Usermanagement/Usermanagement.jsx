@@ -28,12 +28,12 @@ const UserManagement = () => {
             return;
         }
         try {
-            const response = await axios.post('http://localhost:5000/users/signup', users, {
+            const response = await axios.post('https://backend-rvaz.onrender.com/users/signup', users, {
                 withCredentials:true
             })
             console.log("signup successfull", response.data);
             toast.success("User Added Successfully");
-            const updatedUsers = await axios.get('http://localhost:5000/users/users');
+            const updatedUsers = await axios.get('https://backend-rvaz.onrender.com/users/users');
             setCustomers(updatedUsers.data.info);
             setUsers({
                 user_name: '',
@@ -54,7 +54,7 @@ const UserManagement = () => {
 
     useEffect(() => {
         const fetchuser = async () => {
-            const info = await axios.get('http://localhost:5000/users/users');
+            const info = await axios.get('https://backend-rvaz.onrender.com/users/users');
             setCustomers(info.data.info);
         }
         fetchuser();
@@ -65,9 +65,9 @@ const UserManagement = () => {
     // Function to delete a user
     const deleteUser = async (index) => {
         try {
-            const fetchid = await axios.delete(`http://localhost:5000/users/getuserbyid/${index}`);
+            const fetchid = await axios.delete(`https://backend-rvaz.onrender.com/users/getuserbyid/${index}`);
             toast.success(fetchid.data.message);
-            const updatedUsers = await axios.get('http://localhost:5000/users/users');
+            const updatedUsers = await axios.get('https://backend-rvaz.onrender.com/users/users');
             setCustomers(updatedUsers.data.info);
         }
         catch (error) {

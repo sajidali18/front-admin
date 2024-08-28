@@ -30,7 +30,7 @@ function SignUp() {
     const handlesubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/users/signup', info, {
+            const response = await axios.post('https://backend-rvaz.onrender.com/users/signup', info, {
                 withCredentials:true
             });
             console.log('Signup successful:', response.data);

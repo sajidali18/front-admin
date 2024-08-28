@@ -12,7 +12,7 @@ const AdminUserManagement = () => {
         // Fetch users when the component mounts
         const fetchUsers = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/users/users');
+                const response = await axios.get('https://backend-rvaz.onrender.com/users/users');
                 setUsers(response.data.info);
             } catch (error) {
                 console.error('Error fetching users:', error);
@@ -39,13 +39,13 @@ const AdminUserManagement = () => {
         }
 
         try {
-            await axios.put('http://localhost:5000/users/assign', {
+            await axios.put('https://backend-rvaz.onrender.com/users/assign', {
                 user_name: selectedUser,
                 role: newRole
             });
             toast.success('Role assigned successfully');
             // Optionally, refresh the user list
-            const response = await axios.get('http://localhost:5000/users/users');
+            const response = await axios.get('https://backend-rvaz.onrender.com/users/users');
             setUsers(response.data.info);
         } catch (error) {
             console.error('Error assigning role:', error);

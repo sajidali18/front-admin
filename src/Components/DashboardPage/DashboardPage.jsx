@@ -20,7 +20,7 @@ function DashboardPage({ id }) {
         if (id) { // Check if id is available
             const fetchUser = async () => {
                 try {
-                    const response = await axios.get(`http://localhost:5000/users/getuser/${id}`);
+                    const response = await axios.get(`https://backend-rvaz.onrender.com/users/getuser/${id}`);
                     setUser(response.data);
                     setLoading(false); // Set loading to false after data is fetched
                 } catch (error) {

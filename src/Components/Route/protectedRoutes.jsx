@@ -27,7 +27,7 @@ const ProtectedRoute = ({ element: Component, allowedRoles, ...rest }) => {
         if (userid) { // Check if id is available
             const fetchUser = async () => {
                 try {
-                    const response = await axios.get(`http://localhost:5000/users/getuser/${userid}`);
+                    const response = await axios.get(`https://backend-rvaz.onrender.com/users/getuser/${userid}`);
                     setInfo(response.data);
                     setLoading(false);
                 } catch (error) {

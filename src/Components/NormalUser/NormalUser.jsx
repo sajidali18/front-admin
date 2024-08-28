@@ -18,8 +18,8 @@ const NormalUserDashboard = ({ id }) => {
         if (id) { // Check if id is available
             const fetchUser = async () => {
                 try {
-                    const response = await axios.get(`http://localhost:5000/users/getuser/${id}`);
-                    // console.log(response.data);
+                    const response = await axios.get(`https://backend-rvaz.onrender.com/users/getuser/${id}`);
+                    console.log(response.data);
                     setUser(response.data);
                     setLoading(false); // Set loading to false after data is fetched
                 } catch (error) {
@@ -44,7 +44,7 @@ const NormalUserDashboard = ({ id }) => {
     const handleProfileUpdate = async (e) => {
         e.preventDefault();
             try {
-                const res = await axios.put('http://localhost:5000/users/updateuser', { ...user, id });
+                const res = await axios.put('https://backend-rvaz.onrender.com/users/updateuser', { ...user, id });
                 toast.success(res.data.message);
             } catch (error) {
                 console.error('Error updating profile:', error);
